@@ -12,6 +12,7 @@ from kitconcept.formgen.testing import KITCONCEPT_FORMGEN_FUNCTIONAL_TESTING  # 
 from kitconcept.formgen.interfaces import IForm
 
 import unittest2 as unittest
+import json
 import requests
 import transaction
 
@@ -69,12 +70,35 @@ class FormFunctionalTest(unittest.TestCase):
         self.assertEqual(200, response.status_code)
 
     def test_post_schema(self):
+        schema = {
+            "title": "Form",
+            "type": "object",
+            "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                "subject": {
+                        "type": "string"
+                    },
+                "comments": {
+                        "type": "string"
+                    }
+            },
+            "required": ["email", "subject", "comments"]
+        }
         response = requests.post(
             self.form.absolute_url(),
-            headers={'Accept': 'application/json'},
-            auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD)
+            headers={
+                'Accept': 'application/json',
+                'Content-Type': 'application/schema-instance+json'
+            },
+            auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD),
+            json=schema
         )
+        transaction.commit()
+
         self.assertEqual(201, response.status_code)
+        self.assertEqual(json.dumps(schema), self.form.schema)
 
     def test_patch_schema(self):
         response = requests.patch(

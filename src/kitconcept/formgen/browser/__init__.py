@@ -1,5 +1,8 @@
 from plone.rest import Service
 
+import json
+import transaction
+
 
 class GetSchema(Service):
 
@@ -11,8 +14,9 @@ class GetSchema(Service):
 class PostSchema(Service):
 
     def render(self):
-        self.request.response.setStatus(201)
-        return '{"message": "POST: Schema"}'
+        self.context.schema = self.request.get('BODY', '{}')
+        transaction.commit()
+        return self.request.response.setStatus(201)
 
 
 class PatchSchema(Service):
