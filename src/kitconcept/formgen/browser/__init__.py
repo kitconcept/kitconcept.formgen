@@ -1,6 +1,5 @@
 from plone.rest import Service
 
-import json
 import transaction
 
 
