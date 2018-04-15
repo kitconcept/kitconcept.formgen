@@ -10,12 +10,11 @@
 
   <include package=".browser" />
 
-
   <genericsetup:registerProfile
       name="default"
       title="kitconcept.formgen"
       directory="profiles/default"
-      description="Installs the kitconcept.formgen add-on."
+      description="Form generator for Plone."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.post_install"
       />
