@@ -30,8 +30,9 @@ class PatchSchema(Service):
 class DeleteSchema(Service):
 
     def render(self):
-        self.request.response.setStatus(204)
-        return '{"message": "DELETE: Schema"}'
+        self.context.schema = u"{}"
+        transaction.commit()
+        return self.request.response.setStatus(204)
 
 
 class SubmitForm(Service):

@@ -132,9 +132,15 @@ class FormFunctionalTest(unittest.TestCase):
         self.assertEqual(json.dumps(schema), self.form.schema)
 
     def test_delete_schema(self):
+        self.form.schema = '{"type": "object"}'
+        transaction.commit()
+
         response = requests.delete(
             self.form.absolute_url(),
             headers={'Accept': 'application/json'},
             auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD)
         )
+        transaction.commit()
+
         self.assertEqual(204, response.status_code)
+        self.assertEqual(u"{}", self.form.schema)
