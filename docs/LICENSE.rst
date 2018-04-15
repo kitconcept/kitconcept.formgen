@@ -1,4 +1,4 @@
-plone.formgen Copyright 2018, kitconcept GmbH
+kitconcept.formgen Copyright 2018, kitconcept GmbH
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License version 2

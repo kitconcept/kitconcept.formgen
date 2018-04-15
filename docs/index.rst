@@ -1,5 +1,5 @@
 ====================
-plone.formgen
+kitconcept.formgen
 ====================
 
 User documentation

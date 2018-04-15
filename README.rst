@@ -3,27 +3,27 @@
    This text does not appear on pypi or github. It is a comment.
 
 ==============================================================================
-plone.formgen
+kitconcept.formgen
 ==============================================================================
 
-.. image:: https://travis-ci.org/kitconcept/plone.formgen.svg?branch=master
-    :target: https://travis-ci.org/kitconcept/plone.formgen
+.. image:: https://travis-ci.org/kitconcept/kitconcept.formgen.svg?branch=master
+    :target: https://travis-ci.org/kitconcept/kitconcept.formgen
 
-.. image:: https://img.shields.io/pypi/status/plone.formgen.svg
-    :target: https://pypi.python.org/pypi/plone.formgen/
+.. image:: https://img.shields.io/pypi/status/kitconcept.formgen.svg
+    :target: https://pypi.python.org/pypi/kitconcept.formgen/
     :alt: Egg Status
 
-.. image:: https://img.shields.io/pypi/v/plone.formgen.svg
-    :target: https://pypi.python.org/pypi/plone.formgen
+.. image:: https://img.shields.io/pypi/v/kitconcept.formgen.svg
+    :target: https://pypi.python.org/pypi/kitconcept.formgen
     :alt: Latest Version
 
-.. image:: https://img.shields.io/pypi/l/plone.formgen.svg
-    :target: https://pypi.python.org/pypi/plone.formgen
+.. image:: https://img.shields.io/pypi/l/kitconcept.formgen.svg
+    :target: https://pypi.python.org/pypi/kitconcept.formgen
     :alt: License
 
 |
 
-.. image:: https://raw.githubusercontent.com/kitconcept/plone.formgen/master/kitconcept.png
+.. image:: https://raw.githubusercontent.com/kitconcept/kitconcept.formgen/master/kitconcept.png
    :alt: kitconcept
    :target: https://kitconcept.com/
 
@@ -59,14 +59,14 @@ This product has been translated into
 Installation
 ------------
 
-Install plone.formgen by adding it to your buildout::
+Install kitconcept.formgen by adding it to your buildout::
 
     [buildout]
 
     ...
 
     eggs =
-        plone.formgen
+        kitconcept.formgen
 
 
 and then running ``bin/buildout``
@@ -75,8 +75,8 @@ and then running ``bin/buildout``
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/plone.formgen/issues
-- Source Code: https://github.com/collective/plone.formgen
+- Issue Tracker: https://github.com/collective/kitconcept.formgen/issues
+- Source Code: https://github.com/collective/kitconcept.formgen
 - Documentation: https://docs.plone.org/foo/bar
 
 

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Installer for the plone.formgen package."""
+"""Installer for the kitconcept.formgen package."""
 
 from setuptools import find_packages
 from setuptools import setup
@@ -13,7 +13,7 @@ long_description = '\n\n'.join([
 
 
 setup(
-    name='plone.formgen',
+    name='kitconcept.formgen',
     version='1.0a1',
     description="Form Generator for the Plone CMS",
     long_description=long_description,
@@ -30,7 +30,7 @@ setup(
     keywords='Python Plone',
     author='kitconcept GmbH',
     author_email='info@kitconcept.com',
-    url='https://pypi.python.org/pypi/plone.formgen',
+    url='https://pypi.python.org/pypi/kitconcept.formgen',
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
     namespace_packages=['plone'],
