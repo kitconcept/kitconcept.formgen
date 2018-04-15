@@ -101,12 +101,35 @@ class FormFunctionalTest(unittest.TestCase):
         self.assertEqual(json.dumps(schema), self.form.schema)
 
     def test_patch_schema(self):
+        schema = {
+            "title": "Form",
+            "type": "object",
+            "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                "subject": {
+                        "type": "string"
+                },
+                "comments": {
+                        "type": "string"
+                }
+            },
+            "required": ["email", "subject", "comments"]
+        }
         response = requests.patch(
             self.form.absolute_url(),
-            headers={'Accept': 'application/json'},
-            auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD)
+            headers={
+                'Accept': 'application/json',
+                'Content-Type': 'application/schema-instance+json'
+            },
+            auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD),
+            json=schema
         )
+        transaction.commit()
+
         self.assertEqual(204, response.status_code)
+        self.assertEqual(json.dumps(schema), self.form.schema)
 
     def test_delete_schema(self):
         response = requests.delete(

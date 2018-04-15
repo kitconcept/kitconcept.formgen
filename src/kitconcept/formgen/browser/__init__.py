@@ -22,8 +22,9 @@ class PostSchema(Service):
 class PatchSchema(Service):
 
     def render(self):
-        self.request.response.setStatus(204)
-        return '{"message": "PATCH: Schema"}'
+        self.context.schema = self.request.get('BODY', '{}')
+        transaction.commit()
+        return self.request.response.setStatus(204)
 
 
 class DeleteSchema(Service):
