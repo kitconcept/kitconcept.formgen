@@ -33,7 +33,7 @@ setup(
     url='https://pypi.python.org/pypi/kitconcept.formgen',
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
-    namespace_packages=['plone'],
+    namespace_packages=['kitconcept'],
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
