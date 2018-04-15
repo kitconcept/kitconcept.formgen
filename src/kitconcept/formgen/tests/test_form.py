@@ -105,14 +105,14 @@ class FormFunctionalTest(unittest.TestCase):
             "title": "Form",
             "type": "object",
             "properties": {
-                    "email": {
-                        "type": "string"
-                    },
+                "email": {
+                    "type": "string"
+                },
                 "subject": {
-                        "type": "string"
+                    "type": "string"
                 },
                 "comments": {
-                        "type": "string"
+                    "type": "string"
                 }
             },
             "required": ["email", "subject", "comments"]
@@ -144,3 +144,22 @@ class FormFunctionalTest(unittest.TestCase):
 
         self.assertEqual(204, response.status_code)
         self.assertEqual(u"{}", self.form.schema)
+
+    def test_form_submit(self):
+        schema = {
+            'email': 'john@example.com',
+            'subject': 'hello world',
+            'comment': 'lorem ipsum',
+        }
+        response = requests.post(
+            self.form.absolute_url() + '/submit',
+            headers={
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD),
+            json=schema
+        )
+        transaction.commit()
+
+        self.assertEqual(201, response.status_code)

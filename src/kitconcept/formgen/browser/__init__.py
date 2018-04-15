@@ -38,5 +38,5 @@ class DeleteSchema(Service):
 class SubmitForm(Service):
 
     def render(self):
-        self.request.response.setStatus(201)
-        return '{"message": "POST: Form submitted!"}'
+        # todo: call adapters
+        return self.request.response.setStatus(201)

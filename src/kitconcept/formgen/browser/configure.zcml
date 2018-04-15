@@ -41,7 +41,7 @@
     name="submit"
     accept="application/json"
     for="kitconcept.formgen.interfaces.IForm"
-    factory=".submit.SubmitForm"
+    factory=".SubmitForm"
     permission="zope2.View"
     />
 
