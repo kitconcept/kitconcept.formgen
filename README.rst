@@ -27,13 +27,13 @@ kitconcept.formgen
    :alt: kitconcept
    :target: https://kitconcept.com/
 
-Tell me what your product does
+kitconcept.formgen allows to generate forms through the web (TTW).
 
 Features
 --------
 
-- Can be bullet points
-
+- Add, updated and delete form definitions (JSON schema)
+- Submit a form
 
 Examples
 --------
@@ -84,7 +84,7 @@ Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+Send us an email at info@kitconcept.com.
 
 
 License

@@ -34,7 +34,7 @@ KITCONCEPT_FORMGEN_INTEGRATION_TESTING = IntegrationTesting(
 
 
 KITCONCEPT_FORMGEN_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(KITCONCEPT_FORMGEN_FIXTURE,),
+    bases=(KITCONCEPT_FORMGEN_FIXTURE, z2.ZSERVER_FIXTURE),
     name='PloneFormgenLayer:FunctionalTesting'
 )
 
