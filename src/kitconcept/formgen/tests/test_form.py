@@ -86,11 +86,7 @@ class FormFunctionalTest(unittest.TestCase):
         schema = {
             "title": "Form",
             "type": "object",
-            "properties": {
-                "email": {"type": "string"},
-                "subject": {"type": "string"},
-                "comments": {"type": "string"},
-            },
+            "properties": {"name": {"type": "string"}},
             "required": ["email", "subject", "comments"],
         }
         response = requests.post(
