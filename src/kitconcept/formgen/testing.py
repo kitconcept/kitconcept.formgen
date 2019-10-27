@@ -21,21 +21,20 @@ class PloneFormgenLayer(PloneSandboxLayer):
         self.loadZCML(package=kitconcept.formgen)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'kitconcept.formgen:default')
+        applyProfile(portal, "kitconcept.formgen:default")
 
 
 KITCONCEPT_FORMGEN_FIXTURE = PloneFormgenLayer()
 
 
 KITCONCEPT_FORMGEN_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(KITCONCEPT_FORMGEN_FIXTURE,),
-    name='PloneFormgenLayer:IntegrationTesting'
+    bases=(KITCONCEPT_FORMGEN_FIXTURE,), name="PloneFormgenLayer:IntegrationTesting"
 )
 
 
 KITCONCEPT_FORMGEN_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(KITCONCEPT_FORMGEN_FIXTURE, z2.ZSERVER_FIXTURE),
-    name='PloneFormgenLayer:FunctionalTesting'
+    name="PloneFormgenLayer:FunctionalTesting",
 )
 
 
@@ -43,7 +42,7 @@ KITCONCEPT_FORMGEN_ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(
         KITCONCEPT_FORMGEN_FIXTURE,
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
-        z2.ZSERVER_FIXTURE
+        z2.ZSERVER_FIXTURE,
     ),
-    name='PloneFormgenLayer:AcceptanceTesting'
+    name="PloneFormgenLayer:AcceptanceTesting",
 )

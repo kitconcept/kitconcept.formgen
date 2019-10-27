@@ -369,4 +369,3 @@ class IMailerAction(Interface):
         missing_value=u"",
         # constraint=isTALES,
     )
-
