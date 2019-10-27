@@ -87,7 +87,7 @@ class FormFunctionalTest(unittest.TestCase):
             "title": "Form",
             "type": "object",
             "properties": {"name": {"type": "string"}},
-            "required": ["email", "subject", "comments"],
+            "required": ["name"],
         }
         response = requests.post(
             self.form.absolute_url(),
@@ -107,12 +107,8 @@ class FormFunctionalTest(unittest.TestCase):
         schema = {
             "title": "Form",
             "type": "object",
-            "properties": {
-                "email": {"type": "string"},
-                "subject": {"type": "string"},
-                "comments": {"type": "string"},
-            },
-            "required": ["email", "subject", "comments"],
+            "properties": {"name": {"type": "subject"}},
+            "required": ["subject"],
         }
         response = requests.patch(
             self.form.absolute_url(),
