@@ -173,7 +173,7 @@ class IMailerAction(Interface):
         required=False,
     )
 
-    showAll = zope.schema.Bool(
+    show_all = zope.schema.Bool(
         title=_(u"label_mailallfields_text", default=u"Include All Fields"),
         description=_(
             u"help_mailallfields_text",
@@ -187,7 +187,7 @@ class IMailerAction(Interface):
         required=False,
     )
 
-    showFields = zope.schema.List(
+    show_fields = zope.schema.List(
         title=_(u"label_mailfields_text", default=u"Show Responses"),
         description=_(
             u"help_mailfields_text",
@@ -199,7 +199,7 @@ class IMailerAction(Interface):
         value_type=zope.schema.Choice(vocabulary="easyform.Fields"),
     )
 
-    includeEmpties = zope.schema.Bool(
+    include_empties = zope.schema.Bool(
         title=_(u"label_mailEmpties_text", default=u"Include Empties"),
         description=_(
             u"help_mailEmpties_text",
@@ -212,7 +212,7 @@ class IMailerAction(Interface):
         required=False,
     )
 
-    sendCSV = zope.schema.Bool(
+    send_csv = zope.schema.Bool(
         title=_(u"label_sendCSV_text", default=u"Send CSV data attachment"),
         description=_(
             u"help_sendCSV_text",
@@ -333,7 +333,7 @@ class IMailerAction(Interface):
         # constraint=isTALES,
     )
 
-    ccOverride = zope.schema.TextLine(
+    cc_override = zope.schema.TextLine(
         title=_(u"label_cc_override_text", default=u"CC Expression"),
         description=_(
             u"help_cc_override_text",
@@ -351,7 +351,7 @@ class IMailerAction(Interface):
         # constraint=isTALES,
     )
 
-    bccOverride = zope.schema.TextLine(
+    bcc_override = zope.schema.TextLine(
         title=_(u"label_bcc_override_text", default=u"BCC Expression"),
         description=_(
             u"help_bcc_override_text",
