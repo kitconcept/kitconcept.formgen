@@ -71,12 +71,16 @@ class FormFunctionalTest(unittest.TestCase):
             "required": ["email", "subject", "comments"],
         }
         self.form.schema = schema
+        transaction.commit()
+
         response = requests.get(
             self.form.absolute_url(),
             headers={"Accept": "application/json"},
             auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD),
         )
+
         self.assertEqual(200, response.status_code)
+        self.assertEqual(schema, response.json())
 
     def test_post_schema(self):
         schema = {

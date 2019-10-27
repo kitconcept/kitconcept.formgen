@@ -1,13 +1,15 @@
 # -*- coding: utf-8 -*-
 from plone.rest import Service
 
+import json
 import transaction
 
 
 class GetSchema(Service):
     def render(self):
         self.request.response.setStatus(200)
-        return '{"message": "GET: Schema"}'
+        self.request.response.setHeader("Content-Type", "application/json+schema")
+        return json.dumps(self.context.schema)
 
 
 class PostSchema(Service):
