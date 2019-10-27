@@ -45,7 +45,9 @@ This add-on can be seen in action at the following sites:
 Documentation
 -------------
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+kitconcept.formgen adds a "Form" content type and a submit REST endpoint.
+
+To submit form data do a POST request on the form content object::
 
 
 Translations
