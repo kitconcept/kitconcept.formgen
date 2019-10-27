@@ -34,6 +34,8 @@ Features
 
 - Add, updated and delete form definitions (JSON schema)
 - Submit a form
+- Send an email as form action
+- Store data of the form submissions as JSON/CSV
 
 Examples
 --------
