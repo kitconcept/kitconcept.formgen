@@ -139,7 +139,7 @@ class FormFunctionalTest(unittest.TestCase):
         self.assertEqual(u"{}", self.form.schema)
 
     def test_form_submit(self):
-        schema = {
+        data = {
             "email": "john@example.com",
             "subject": "hello world",
             "comment": "lorem ipsum",
@@ -148,8 +148,33 @@ class FormFunctionalTest(unittest.TestCase):
             self.form.absolute_url() + "/submit",
             headers={"Accept": "application/json", "Content-Type": "application/json"},
             auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD),
-            json=schema,
+            json=data,
         )
         transaction.commit()
 
         self.assertEqual(201, response.status_code)
+        self.assertEqual(data, self.form.data)
+
+    def test_form_submit_appends_data(self):
+        self.form.data = {
+            "email": "john@example.com",
+            "subject": "hello world",
+            "comment": "lorem ipsum",
+        }
+        transaction.commit()
+
+        newdata = {
+            "email": "jane@example.com",
+            "subject": "hi from jane",
+            "comment": "hi there",
+        }
+        response = requests.post(
+            self.form.absolute_url() + "/submit",
+            headers={"Accept": "application/json", "Content-Type": "application/json"},
+            auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD),
+            json=newdata,
+        )
+        transaction.commit()
+
+        self.assertEqual(201, response.status_code)
+        # todo: check that data is appended

@@ -21,6 +21,13 @@ class IForm(Interface):
 
     description = schema.Text(title=_(u"Description"), required=False)
 
+    data = schema.Text(
+        title=_(u"Data"),
+        description=_(u"JSON data from form submissions"),
+        required=False,
+        default=u"{}",
+    )
+
     schema = schema.Text(
         title=_(u"Schema"),
         description=_(u"JSON schema definition of the form"),
