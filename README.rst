@@ -47,7 +47,79 @@ This add-on can be seen in action at the following sites:
 Documentation
 -------------
 
-kitconcept.formgen adds a "Form" content type and a submit REST endpoint.
+kitconcept.formgen adds a "Form" content type with title, description, schema and data field.
+
+GET form schema::
+
+    GET
+    /Plone/my-form
+    Accept: Application/json
+
+Response::
+
+    {
+        "title": "Form",
+        "type": "object",
+        "properties": {
+            "email": {"type": "string"},
+            "subject": {"type": "string"},
+            "comments": {"type": "string"},
+        },
+        "required": ["email", "subject", "comments"],
+    }
+
+POST form schema::
+
+    POST
+    /Plone/my-form
+    Accept: Application/json
+    Content-Type: application/schema-instance+json
+    {
+        "title": "Form",
+        "type": "object",
+        "properties": {
+            "email": {"type": "string"},
+            "subject": {"type": "string"},
+            "comments": {"type": "string"},
+        },
+        "required": ["email", "subject", "comments"],
+    }
+
+PATCH form schema::
+
+    PATCH
+    /Plone/my-form
+    Accept: Application/json
+    Content-Type: application/schema-instance+json
+    {
+        "title": "Form",
+        "type": "object",
+        "properties": {
+            "email": {"type": "string"},
+            "subject": {"type": "string"},
+            "comments": {"type": "string"},
+        },
+        "required": ["email", "subject", "comments"],
+    }
+
+DELETE form schema::
+
+    DELETE
+    /Plone/my-form
+    Accept: Application/json
+
+Submit form data::
+
+    POST
+    /Plone/my-form/submit
+    Accept: Application/json
+    Content-Type: application/schema-instance+json
+
+    {
+        "email": "jane@example.com",
+        "subject": "hi from jane",
+        "comment": "hi there",
+    }
 
 To submit form data do a POST request on the form content object::
 
