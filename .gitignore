@@ -1,5 +1,7 @@
 .Python
 .coverage
+.vscode
+pyvenv.cfg
 *.egg-info
 *.log
 *.mo
