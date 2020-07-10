@@ -38,9 +38,9 @@
 
   <plone:service
     method="POST"
-    name="submit"
+    name="submit-form"
     accept="application/json"
-    for="kitconcept.formgen.interfaces.IForm"
+    for="plone.restapi.behaviors.IBlocks"
     factory=".SubmitForm"
     permission="zope2.View"
     />

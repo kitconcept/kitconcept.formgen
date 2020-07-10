@@ -43,6 +43,7 @@ setup(
         "plone.api",
         "plone.app.dexterity",
         "plone.rest",
+        "plone.restapi",
         "Products.GenericSetup>=1.8.2",
         "requests",
         "setuptools",
