@@ -27,12 +27,11 @@ kitconcept.formgen
    :alt: kitconcept
    :target: https://kitconcept.com/
 
-kitconcept.formgen allows to generate forms through the web (TTW).
+kitconcept.formgen allows to submit form data on a content object that implements the IBlocks behavior.
 
 Features
 --------
 
-- Add, updated and delete form definitions (JSON schema)
 - Submit a form
 - Send an email as form action
 - Store data of the form submissions as JSON/CSV
@@ -46,67 +45,6 @@ This add-on can be seen in action at the following sites:
 
 Documentation
 -------------
-
-kitconcept.formgen adds a "Form" content type with title, description, schema and data field.
-
-GET form schema::
-
-    GET
-    /Plone/my-form
-    Accept: Application/json
-
-Response::
-
-    {
-        "title": "Form",
-        "type": "object",
-        "properties": {
-            "email": {"type": "string"},
-            "subject": {"type": "string"},
-            "comments": {"type": "string"},
-        },
-        "required": ["email", "subject", "comments"],
-    }
-
-POST form schema::
-
-    POST
-    /Plone/my-form
-    Accept: Application/json
-    Content-Type: application/schema-instance+json
-    {
-        "title": "Form",
-        "type": "object",
-        "properties": {
-            "email": {"type": "string"},
-            "subject": {"type": "string"},
-            "comments": {"type": "string"},
-        },
-        "required": ["email", "subject", "comments"],
-    }
-
-PATCH form schema::
-
-    PATCH
-    /Plone/my-form
-    Accept: Application/json
-    Content-Type: application/schema-instance+json
-    {
-        "title": "Form",
-        "type": "object",
-        "properties": {
-            "email": {"type": "string"},
-            "subject": {"type": "string"},
-            "comments": {"type": "string"},
-        },
-        "required": ["email", "subject", "comments"],
-    }
-
-DELETE form schema::
-
-    DELETE
-    /Plone/my-form
-    Accept: Application/json
 
 Submit form data::
 

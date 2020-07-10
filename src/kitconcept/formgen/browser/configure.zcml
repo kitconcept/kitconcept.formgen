@@ -5,38 +5,6 @@
     i18n_domain="kitconcept.formgen">
 
   <plone:service
-    method="GET"
-    accept="application/json"
-    for="kitconcept.formgen.interfaces.IForm"
-    factory=".GetSchema"
-    permission="zope2.View"
-    />
-
-  <plone:service
-    method="POST"
-    accept="application/json"
-    for="kitconcept.formgen.interfaces.IForm"
-    factory=".PostSchema"
-    permission="zope2.View"
-    />
-
-  <plone:service
-    method="PATCH"
-    accept="application/json"
-    for="kitconcept.formgen.interfaces.IForm"
-    factory=".PatchSchema"
-    permission="zope2.View"
-    />
-
-  <plone:service
-    method="DELETE"
-    accept="application/json"
-    for="kitconcept.formgen.interfaces.IForm"
-    factory=".DeleteSchema"
-    permission="zope2.View"
-    />
-
-  <plone:service
     method="POST"
     name="submit-form"
     accept="application/json"

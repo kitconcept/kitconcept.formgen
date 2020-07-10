@@ -19,35 +19,7 @@ import requests
 import transaction
 
 
-class FormIntegrationTest(unittest.TestCase):
-
-    layer = KITCONCEPT_FORMGEN_INTEGRATION_TESTING
-
-    def setUp(self):
-        self.portal = self.layer["portal"]
-        setRoles(self.portal, TEST_USER_ID, ["Manager"])
-
-    def test_schema(self):
-        fti = queryUtility(IDexterityFTI, name="Form")
-        schema = fti.lookupSchema()
-        self.assertEqual(IForm, schema)
-
-    def test_fti(self):
-        fti = queryUtility(IDexterityFTI, name="Form")
-        self.assertTrue(fti)
-
-    def test_factory(self):
-        fti = queryUtility(IDexterityFTI, name="Form")
-        factory = fti.factory
-        obj = createObject(factory)
-        self.assertTrue(IForm.providedBy(obj))
-
-    def test_adding(self):
-        self.portal.invokeFactory("Form", "Form")
-        self.assertTrue(IForm.providedBy(self.portal["Form"]))
-
-
-class FormFunctionalTest(unittest.TestCase):
+class FormSubmitFunctionalTest(unittest.TestCase):
 
     layer = KITCONCEPT_FORMGEN_FUNCTIONAL_TESTING
 
