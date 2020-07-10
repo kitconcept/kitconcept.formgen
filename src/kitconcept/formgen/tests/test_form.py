@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 from plone.app.testing import TEST_USER_ID
-from zope.component import queryUtility
-from zope.component import createObject
 from plone.app.testing import setRoles
-from plone.dexterity.interfaces import IDexterityFTI
 from plone.dexterity.fti import DexterityFTI
 from plone.app.testing import SITE_OWNER_NAME
 from plone.app.testing import SITE_OWNER_PASSWORD
@@ -12,7 +9,6 @@ from zope.interface import alsoProvides
 
 from kitconcept.formgen.testing import KITCONCEPT_FORMGEN_INTEGRATION_TESTING  # noqa
 from kitconcept.formgen.testing import KITCONCEPT_FORMGEN_FUNCTIONAL_TESTING  # noqa
-from kitconcept.formgen.interfaces import IForm
 
 import unittest
 import requests
