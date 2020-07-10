@@ -2,7 +2,6 @@
 from plone.rest import Service
 from plone.restapi.deserializer import json_body
 
-import json
 import transaction
 
 
