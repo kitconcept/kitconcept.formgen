@@ -15,7 +15,6 @@ from kitconcept.formgen.testing import KITCONCEPT_FORMGEN_FUNCTIONAL_TESTING  # 
 from kitconcept.formgen.interfaces import IForm
 
 import unittest
-import json
 import requests
 import transaction
 
