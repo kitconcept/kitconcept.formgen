@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
 from kitconcept.voltoformbuilder.testing import (
-    KITCONCEPT_voltoformbuilder_INTEGRATION_TESTING,
+    KITCONCEPT_VOLTOFORMBUILDER_INTEGRATION_TESTING,
 )  # noqa
 from plone import api
 from plone.app.testing import setRoles
@@ -14,7 +14,7 @@ import unittest
 class TestSetup(unittest.TestCase):
     """Test that kitconcept.voltoformbuilder is properly installed."""
 
-    layer = KITCONCEPT_voltoformbuilder_INTEGRATION_TESTING
+    layer = KITCONCEPT_VOLTOFORMBUILDER_INTEGRATION_TESTING
 
     def setUp(self):
         """Custom shared utility setup for tests."""
@@ -37,7 +37,7 @@ class TestSetup(unittest.TestCase):
 
 class TestUninstall(unittest.TestCase):
 
-    layer = KITCONCEPT_voltoformbuilder_INTEGRATION_TESTING
+    layer = KITCONCEPT_VOLTOFORMBUILDER_INTEGRATION_TESTING
 
     def setUp(self):
         self.portal = self.layer["portal"]

@@ -24,24 +24,24 @@ class PlonevoltoformbuilderLayer(PloneSandboxLayer):
         applyProfile(portal, "kitconcept.voltoformbuilder:default")
 
 
-KITCONCEPT_voltoformbuilder_FIXTURE = PlonevoltoformbuilderLayer()
+KITCONCEPT_VOLTOFORMBUILDER_FIXTURE = PlonevoltoformbuilderLayer()
 
 
-KITCONCEPT_voltoformbuilder_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(KITCONCEPT_voltoformbuilder_FIXTURE,),
+KITCONCEPT_VOLTOFORMBUILDER_INTEGRATION_TESTING = IntegrationTesting(
+    bases=(KITCONCEPT_VOLTOFORMBUILDER_FIXTURE,),
     name="PlonevoltoformbuilderLayer:IntegrationTesting",
 )
 
 
-KITCONCEPT_voltoformbuilder_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(KITCONCEPT_voltoformbuilder_FIXTURE, z2.ZSERVER_FIXTURE),
+KITCONCEPT_VOLTOFORMBUILDER_FUNCTIONAL_TESTING = FunctionalTesting(
+    bases=(KITCONCEPT_VOLTOFORMBUILDER_FIXTURE, z2.ZSERVER_FIXTURE),
     name="PlonevoltoformbuilderLayer:FunctionalTesting",
 )
 
 
-KITCONCEPT_voltoformbuilder_ACCEPTANCE_TESTING = FunctionalTesting(
+KITCONCEPT_VOLTOFORMBUILDER_ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(
-        KITCONCEPT_voltoformbuilder_FIXTURE,
+        KITCONCEPT_VOLTOFORMBUILDER_FIXTURE,
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE,
     ),

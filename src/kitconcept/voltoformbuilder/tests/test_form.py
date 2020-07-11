@@ -8,10 +8,7 @@ from plone.restapi.behaviors import IBlocks
 from zope.interface import alsoProvides
 
 from kitconcept.voltoformbuilder.testing import (
-    KITCONCEPT_voltoformbuilder_INTEGRATION_TESTING,
-)  # noqa
-from kitconcept.voltoformbuilder.testing import (
-    KITCONCEPT_voltoformbuilder_FUNCTIONAL_TESTING,
+    KITCONCEPT_VOLTOFORMBUILDER_FUNCTIONAL_TESTING,
 )  # noqa
 
 import unittest
@@ -21,7 +18,7 @@ import transaction
 
 class FormSubmitFunctionalTest(unittest.TestCase):
 
-    layer = KITCONCEPT_voltoformbuilder_FUNCTIONAL_TESTING
+    layer = KITCONCEPT_VOLTOFORMBUILDER_FUNCTIONAL_TESTING
 
     def setUp(self):
         self.app = self.layer["app"]
