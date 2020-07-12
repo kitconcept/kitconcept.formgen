@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="kitconcept.voltoformbuilder">
+
+  <plone:service
+    method="POST"
+    name="submit-form"
+    accept="application/json"
+    for="plone.restapi.behaviors.IBlocks"
+    factory=".SubmitForm"
+    permission="zope2.View"
+    />
+
+</configure>

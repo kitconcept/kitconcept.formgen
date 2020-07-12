@@ -3,36 +3,35 @@
    This text does not appear on pypi or github. It is a comment.
 
 ==============================================================================
-kitconcept.formgen
+kitconcept.voltoformbuilder
 ==============================================================================
 
-.. image:: https://travis-ci.org/kitconcept/kitconcept.formgen.svg?branch=master
-    :target: https://travis-ci.org/kitconcept/kitconcept.formgen
+.. image:: https://travis-ci.org/kitconcept/kitconcept.voltoformbuilder.svg?branch=master
+    :target: https://travis-ci.org/kitconcept/kitconcept.voltoformbuilder
 
-.. image:: https://img.shields.io/pypi/status/kitconcept.formgen.svg
-    :target: https://pypi.python.org/pypi/kitconcept.formgen/
+.. image:: https://img.shields.io/pypi/status/kitconcept.voltoformbuilder.svg
+    :target: https://pypi.python.org/pypi/kitconcept.voltoformbuilder/
     :alt: Egg Status
 
-.. image:: https://img.shields.io/pypi/v/kitconcept.formgen.svg
-    :target: https://pypi.python.org/pypi/kitconcept.formgen
+.. image:: https://img.shields.io/pypi/v/kitconcept.voltoformbuilder.svg
+    :target: https://pypi.python.org/pypi/kitconcept.voltoformbuilder
     :alt: Latest Version
 
-.. image:: https://img.shields.io/pypi/l/kitconcept.formgen.svg
-    :target: https://pypi.python.org/pypi/kitconcept.formgen
+.. image:: https://img.shields.io/pypi/l/kitconcept.voltoformbuilder.svg
+    :target: https://pypi.python.org/pypi/kitconcept.voltoformbuilder
     :alt: License
 
 |
 
-.. image:: https://raw.githubusercontent.com/kitconcept/kitconcept.formgen/master/kitconcept.png
+.. image:: https://raw.githubusercontent.com/kitconcept/kitconcept.voltoformbuilder/master/kitconcept.png
    :alt: kitconcept
    :target: https://kitconcept.com/
 
-kitconcept.formgen allows to generate forms through the web (TTW).
+kitconcept.voltoformbuilder allows to submit form data on a content object that implements the IBlocks behavior.
 
 Features
 --------
 
-- Add, updated and delete form definitions (JSON schema)
 - Submit a form
 - Send an email as form action
 - Store data of the form submissions as JSON/CSV
@@ -46,67 +45,6 @@ This add-on can be seen in action at the following sites:
 
 Documentation
 -------------
-
-kitconcept.formgen adds a "Form" content type with title, description, schema and data field.
-
-GET form schema::
-
-    GET
-    /Plone/my-form
-    Accept: Application/json
-
-Response::
-
-    {
-        "title": "Form",
-        "type": "object",
-        "properties": {
-            "email": {"type": "string"},
-            "subject": {"type": "string"},
-            "comments": {"type": "string"},
-        },
-        "required": ["email", "subject", "comments"],
-    }
-
-POST form schema::
-
-    POST
-    /Plone/my-form
-    Accept: Application/json
-    Content-Type: application/schema-instance+json
-    {
-        "title": "Form",
-        "type": "object",
-        "properties": {
-            "email": {"type": "string"},
-            "subject": {"type": "string"},
-            "comments": {"type": "string"},
-        },
-        "required": ["email", "subject", "comments"],
-    }
-
-PATCH form schema::
-
-    PATCH
-    /Plone/my-form
-    Accept: Application/json
-    Content-Type: application/schema-instance+json
-    {
-        "title": "Form",
-        "type": "object",
-        "properties": {
-            "email": {"type": "string"},
-            "subject": {"type": "string"},
-            "comments": {"type": "string"},
-        },
-        "required": ["email", "subject", "comments"],
-    }
-
-DELETE form schema::
-
-    DELETE
-    /Plone/my-form
-    Accept: Application/json
 
 Submit form data::
 
@@ -135,14 +73,14 @@ This product has been translated into
 Installation
 ------------
 
-Install kitconcept.formgen by adding it to your buildout::
+Install kitconcept.voltoformbuilder by adding it to your buildout::
 
     [buildout]
 
     ...
 
     eggs =
-        kitconcept.formgen
+        kitconcept.voltoformbuilder
 
 
 and then running ``bin/buildout``
@@ -151,8 +89,8 @@ and then running ``bin/buildout``
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/kitconcept.formgen/issues
-- Source Code: https://github.com/collective/kitconcept.formgen
+- Issue Tracker: https://github.com/collective/kitconcept.voltoformbuilder/issues
+- Source Code: https://github.com/collective/kitconcept.voltoformbuilder
 - Documentation: https://docs.plone.org/foo/bar
 
 

@@ -1,5 +1,5 @@
 ====================
-kitconcept.formgen
+kitconcept.voltoformbuilder
 ====================
 
 User documentation

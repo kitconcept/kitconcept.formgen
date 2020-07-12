@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
 
-from kitconcept.formgen import _
+from kitconcept.voltoformbuilder import _
 from plone.app.textfield import RichText
 from plone.schema import Email
 from zope import schema
@@ -11,7 +11,7 @@ from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 import zope.schema
 
 
-class IPloneFormgenLayer(IDefaultBrowserLayer):
+class IPlonevoltoformbuilderLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 

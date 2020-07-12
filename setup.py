@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Installer for the kitconcept.formgen package."""
+"""Installer for the kitconcept.voltoformbuilder package."""
 
 from setuptools import find_packages
 from setuptools import setup
@@ -15,7 +15,7 @@ long_description = "\n\n".join(
 
 
 setup(
-    name="kitconcept.formgen",
+    name="kitconcept.voltoformbuilder",
     version="1.0a1",
     description="Form Generator for the Plone CMS",
     long_description=long_description,
@@ -32,7 +32,7 @@ setup(
     keywords="Python Plone",
     author="kitconcept GmbH",
     author_email="info@kitconcept.com",
-    url="https://pypi.python.org/pypi/kitconcept.formgen",
+    url="https://pypi.python.org/pypi/kitconcept.voltoformbuilder",
     license="GPL version 2",
     packages=find_packages("src", exclude=["ez_setup"]),
     namespace_packages=["kitconcept"],
@@ -43,6 +43,7 @@ setup(
         "plone.api",
         "plone.app.dexterity",
         "plone.rest",
+        "plone.restapi",
         "Products.GenericSetup>=1.8.2",
         "requests",
         "setuptools",
