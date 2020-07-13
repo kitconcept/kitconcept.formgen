@@ -35,14 +35,14 @@ class FormSubmitFunctionalTest(unittest.TestCase):
         alsoProvides(self.doc, IBlocks)
         transaction.commit()
 
-    def test_form_submit(self):
+    def test_form_post(self):
         data = {
             "email": "john@example.com",
             "subject": "hello world",
             "comment": "lorem ipsum",
         }
         response = requests.post(
-            self.doc.absolute_url() + "/submit-form",
+            self.doc.absolute_url() + "/@form",
             headers={"Accept": "application/json", "Content-Type": "application/json"},
             auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD),
             json=data,
@@ -52,12 +52,14 @@ class FormSubmitFunctionalTest(unittest.TestCase):
         self.assertEqual(201, response.status_code)
         self.assertEqual(data, self.doc.data)
 
-    def test_form_submit_appends_data(self):
-        self.doc.data = {
-            "email": "john@example.com",
-            "subject": "hello world",
-            "comment": "lorem ipsum",
-        }
+    def test_form_post_appends_data(self):
+        self.doc.data = [
+            {
+                "email": "john@example.com",
+                "subject": "hello world",
+                "comment": "lorem ipsum",
+            }
+        ]
         transaction.commit()
 
         newdata = {
@@ -66,7 +68,7 @@ class FormSubmitFunctionalTest(unittest.TestCase):
             "comment": "hi there",
         }
         response = requests.post(
-            self.doc.absolute_url() + "/submit-form",
+            self.doc.absolute_url() + "/@form",
             headers={"Accept": "application/json", "Content-Type": "application/json"},
             auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD),
             json=newdata,
@@ -75,3 +77,18 @@ class FormSubmitFunctionalTest(unittest.TestCase):
 
         self.assertEqual(201, response.status_code)
         # todo: check that data is appended
+
+    def test_get_form_data(self):
+        self.doc.data = [
+            {
+                "email": "john@example.com",
+                "subject": "hello world",
+                "comment": "lorem ipsum",
+            },
+            {
+                "email": "jane@example.com",
+                "subject": "hi from jane",
+                "comment": "hi there",
+            },
+        ]
+        transaction.commit()

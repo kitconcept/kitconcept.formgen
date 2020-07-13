@@ -49,9 +49,9 @@ Documentation
 Submit form data::
 
     POST
-    /Plone/my-form/submit
+    /Plone/my-document/@form
     Accept: Application/json
-    Content-Type: application/schema-instance+json
+    Content-Type: application/json
 
     {
         "email": "jane@example.com",
@@ -59,8 +59,26 @@ Submit form data::
         "comment": "hi there",
     }
 
-To submit form data do a POST request on the form content object::
+Get all submitted form data::
 
+    GET
+    /Plone/my-document/@form
+    Accept: Application/json
+
+Response::
+
+    [
+        {
+            "email": "john@example.com",
+            "subject": "hello world",
+            "comment": "lorem ipsum",
+        },
+        {
+            "email": "jane@example.com",
+            "subject": "hi from jane",
+            "comment": "hi there",
+        }
+    ]
 
 Translations
 ------------

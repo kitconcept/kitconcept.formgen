@@ -6,10 +6,19 @@
 
   <plone:service
     method="POST"
-    name="submit-form"
+    name="@form"
     accept="application/json"
     for="plone.restapi.behaviors.IBlocks"
-    factory=".SubmitForm"
+    factory=".FormPost"
+    permission="zope2.View"
+    />
+
+  <plone:service
+    method="GET"
+    name="@form"
+    accept="application/json"
+    for="plone.restapi.behaviors.IBlocks"
+    factory=".FormGet"
     permission="zope2.View"
     />
 
