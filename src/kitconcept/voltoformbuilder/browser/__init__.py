@@ -14,7 +14,7 @@ class FormPost(Service):
 
 
 class FormGet(Service):
-    def reply(self):
+    def render(self):
         return [
             {
                 "email": "john@example.com",
