@@ -92,3 +92,29 @@ class FormSubmitFunctionalTest(unittest.TestCase):
             },
         ]
         transaction.commit()
+
+    def test_get_form_data_as_csv(self):
+        self.doc.data = [
+            {
+                "email": "john@example.com",
+                "subject": "hello world",
+                "comment": "lorem ipsum",
+            },
+            {
+                "email": "jane@example.com",
+                "subject": "hi from jane",
+                "comment": "hi there",
+            },
+        ]
+        transaction.commit()
+
+        response = requests.get(
+            self.doc.absolute_url() + "/@form",
+            headers={"Accept": "text/csv"},
+            auth=(SITE_OWNER_NAME, SITE_OWNER_PASSWORD)
+        )
+        self.assertEqual(200, response.status_code)
+        self.assertEqual('attachment; filename=form-data.csv', response.headers.get('Content-Disposition'))
+        self.assertEqual('80', response.headers.get('Content-Length'))
+        self.assertEqual('text/csv; charset=utf-8', response.headers.get('Content-Type'))
+        self.assertEqual('john@example.com,hello world,lorem ipsum\r\njane@example.com,hi from jane,hi there', response.text)
