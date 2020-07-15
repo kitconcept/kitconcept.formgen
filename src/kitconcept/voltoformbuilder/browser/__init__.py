@@ -20,6 +20,7 @@ class FormPost(Service):
 class FormGet(Service):
     def render(self):
         logger.info("FORM: GET")
+        self.request.response.setHeader("Content-Type", "application/json")
         return [
             {
                 "email": "john@example.com",
